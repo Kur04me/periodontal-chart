@@ -84,7 +84,7 @@ const Chart = ({ teethStatus, jawType, surface }: Props) => {
         { xpx: chartWidth, pod: finalData.pod, mm: finalData.mm },
       ]);
     }
-  }, [teethStatus]);
+  }, [teethStatus, jawType, surface]);
 
   return (
     <ComposedChart
