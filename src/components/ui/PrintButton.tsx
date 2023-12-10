@@ -8,7 +8,7 @@ const PrintButton = () => {
   return (
     <>
       <Image
-        src="/assets/printer_icon.svg"
+        src="/periodontal-chart/assets/printer_icon.svg"
         alt="print-button-icon"
         height={32}
         width={32}
