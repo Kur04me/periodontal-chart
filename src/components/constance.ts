@@ -1,8 +1,5 @@
 import { JawType } from "./types";
 
-export const BASE_URL =
-  "https://kur04me.github.io/github.io-periodontal-chart";
-
 export const TOOTH_GRID_WIDTH: { [K in JawType]: number[] } = {
   maxilla: [39, 42, 44, 40, 40, 40, 40, 40, 40, 40, 40, 40, 40, 44, 42, 39],
   mandibular: [42, 47, 46, 38, 38, 38, 38, 38, 38, 38, 38, 38, 38, 46, 47, 42],
