@@ -2,7 +2,7 @@
 const nextConfig = {
   distDir: "./out",
   output: "export",
-  assetPrefix: "/github.io-periodontal-chart",
+  basePath: process.env.GITHUB_ACTIONS ? "/github.io-periodontal-chart" : "",
 };
 
 module.exports = nextConfig;
