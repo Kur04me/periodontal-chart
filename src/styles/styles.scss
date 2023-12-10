@@ -1,0 +1,295 @@
+/* General style */
+@media print {
+  @page {
+    size: A4;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  button {
+    display: none;
+  }
+  #menu {
+    display: none !important;
+  }
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  color: #262626;
+  user-select: none;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+/* Menu */
+#menu {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: -3.8rem;
+  left: 0;
+  width: 100%;
+  height: 4rem;
+  z-index: 999;
+  background-color: #7d7d7d;
+  transition: 0.2s;
+
+  &.show {
+    top: 0rem;
+  }
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    margin: 0 auto;
+  }
+}
+
+#menu-button {
+  position: absolute;
+  left: calc(50% + 280px);
+  bottom: -20px;
+  width: 50px;
+  height: 20px;
+  background-color: #7d7d7d;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+
+  input {
+    display: none;
+  }
+
+  label {
+    display: flex;
+    width: fit-content;
+    height: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+}
+
+#menu-toggle {
+  + label {
+    &:hover {
+      transform: translateY(3px);
+      transition: 0.4s;
+    }
+
+    &.flip-vertical {
+      transform: scaleY(-1) translateY(3px);
+    }
+
+    &.flip-vertical:hover {
+      transform: scaleY(-1) translateY(6px);
+    }
+  }
+}
+
+#menu-sign polyline {
+  fill: transparent;
+  stroke: white;
+  filter: drop-shadow(2 2 2 black);
+}
+
+/* Header */
+#header {
+  width: 100%;
+  vertical-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-weight: normal;
+  font-size: xx-large;
+}
+
+/* main content */
+#main-container {
+  width: fit-content;
+  margin: 4% auto;
+}
+
+#main-content {
+  width: fit-content;
+}
+
+.big-input-box {
+  width: 120px;
+  height: 25px;
+  font-size: 18px;
+  text-align: left;
+}
+
+/* TeethContainer */
+.teeth-grid-wrapper {
+  margin: 10px auto;
+  display: grid;
+  position: relative;
+
+  img {
+    transition: 0.2s;
+  }
+
+  input {
+    width: 100%;
+    background-color: transparent;
+    cursor: pointer; /* マウスカーソルをハンドタイプに変更 */
+    caret-color: transparent; /* 点滅するカーソルを消す */
+    text-align: center;
+    font-size: 10px;
+    transition: 0.1s;
+    border: none;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &:focus {
+      scale: 180%;
+      background-color: white;
+      filter: drop-shadow(1px 1px 0.5px #979797);
+      z-index: 1;
+    }
+  }
+}
+
+.chart {
+  position: absolute;
+  z-index: 100;
+}
+
+.pod-wrapper {
+  height: 100%;
+  width: 100%;
+  grid-row: 2/3;
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 18px;
+}
+
+.input-container {
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  margin: 1px;
+  border-radius: 2px;
+  background-color: #d2d2d2;
+  display: grid;
+  place-content: center;
+}
+
+.pod-label {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.recession-label {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.mm-label {
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+
+.mobility-label {
+  grid-column: 1/2;
+  grid-row: 5/6;
+}
+
+.pod {
+  width: 100%;
+}
+
+.recession {
+  grid-row: 3/4;
+}
+
+.mm {
+  grid-row: 4/5;
+}
+
+.mobility {
+  grid-row: 5/6;
+}
+
+#data-table {
+  width: fit-content;
+  margin: 0px auto;
+}
+
+#maxilla,
+#mandibular {
+  width: fit-content;
+  margin: 0px auto;
+}
+
+.svg-container {
+  display: grid;
+  place-items: center;
+  grid-row: 1 / 2;
+}
+
+.tooth-background-svg {
+  z-index: -1;
+  position: absolute;
+}
+
+.invisible {
+  display: none;
+}
+
+/* SVGを反転させる */
+.flip_horizontal {
+  transform: scale(-1, 1);
+}
+
+/* Footer */
+#footer {
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Radio Button */
+.radio-button-container {
+  height: 1.8rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+
+  input {
+    display: none;
+  }
+
+  input:checked + label {
+    box-shadow: 0.05rem 0.05rem 0.05rem 0.05rem lightsteelblue inset;
+    background-color: rgba(176, 196, 222, 0.76);
+  }
+
+  label {
+    height: 100%;
+    line-height: 1.8rem;
+    width: 3rem;
+    text-align: center;
+    background-color: white;
+    margin: 0.2rem 0.4rem;
+    cursor: pointer;
+    border-radius: 0.3rem;
+    box-shadow: 0.05rem 0.05rem 0.05rem 0.05rem lightsteelblue;
+    transition: 200ms;
+  }
+}

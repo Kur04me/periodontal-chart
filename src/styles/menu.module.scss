@@ -1,0 +1,34 @@
+.menu-icon {
+  position: relative;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    transform: translateY(-3px);
+    transition: 0.2s;
+  }
+
+  & + label {
+    font-size: 0.8rem;
+    line-height: 1.25rem;
+    width: fit-content;
+    padding: 2px 10px;
+    visibility: hidden; // 初期状態では非表示
+    opacity: 0; // 透明度を0に設定
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    background-color: #333;
+    border-radius: 4px;
+    color: white;
+    transform: translateX(-50%) scale(0.9); // 初期状態で少し縮小
+    transition: opacity 0.5s, transform 0.5s; // opacityとtransformに対するtransitionを設定
+    z-index: 1;
+  }
+
+  &:hover + label {
+    visibility: visible; // ホバー時に表示
+    opacity: 1; // 透明度を1に設定
+    transform: translateX(-50%) scale(1); // 元のサイズに戻る
+  }
+}
