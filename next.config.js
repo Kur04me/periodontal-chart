@@ -2,7 +2,8 @@
 const nextConfig = {
   distDir: "./out",
   output: "export",
-  basePath: "/github.io-periodontal-chart",
+  basePath: "/periodontal-chart",
+  assetPrefix: "/periodontal-chart/",
   trailingSlash: true,
   images: {
     unoptimized: true,
