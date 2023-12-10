@@ -1,6 +1,5 @@
 import Image from "next/image";
 import {
-  BASE_URL,
   TOOTH_GRID_WIDTH,
   TOOTH_NUMBERS,
   TOOTH_SVG_FILE_WIDTHS,
