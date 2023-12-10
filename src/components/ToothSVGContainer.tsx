@@ -1,5 +1,6 @@
 import Image from "next/image";
 import {
+  BASE_PATH,
   TOOTH_GRID_WIDTH,
   TOOTH_NUMBERS,
   TOOTH_SVG_FILE_WIDTHS,
@@ -36,7 +37,7 @@ const ToothSVGContainer = ({
   };
 
   const svgFileName = `${jawType}_${surface[0]}_${toothNumber[1]}.svg`;
-  const svgFileURL = `/assets/${svgFileName}`;
+  const svgFileURL = `${BASE_PATH}/assets/${svgFileName}`;
   const imageWidth = TOOTH_SVG_FILE_WIDTHS[svgFileName];
   const imageHeight = surface !== "occlusal" ? 120 : 45;
 
