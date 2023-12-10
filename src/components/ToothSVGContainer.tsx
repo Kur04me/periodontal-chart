@@ -30,6 +30,8 @@ const ToothSVGContainer = ({
     });
   };
 
+  const imgURL = `/assets/${jawType}_${surface[0]}_${toothNumber[1]}.svg`; // "mandibular_b_1.svg"
+
   return (
     <div
       className="svg-container"
@@ -78,7 +80,7 @@ const ToothSVGContainer = ({
         ""
       )}
       <img
-        src={`/assets/${jawType}_${surface[0]}_${toothNumber[1]}.svg`} // "mandibular_b_1.svg"
+        src={imgURL}
         alt="tooth SVG"
         className={`${
           isLeft(toothNumber) ? "flip_horizontal" : ""
