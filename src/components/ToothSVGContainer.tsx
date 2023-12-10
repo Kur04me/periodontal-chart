@@ -1,5 +1,11 @@
-import { TOOTH_GRID_WIDTH, TOOTH_NUMBERS } from "./constance";
+import Image from "next/image";
+import {
+  TOOTH_GRID_WIDTH,
+  TOOTH_NUMBERS,
+  TOOTH_SVG_FILE_WIDTHS,
+} from "./constance";
 import { JawType, Surface, TeethStatus } from "./types";
+import { CSSProperties } from "react";
 
 type Props = {
   toothNumber: string;
@@ -30,7 +36,8 @@ const ToothSVGContainer = ({
     });
   };
 
-  const imgURL = `/assets/${jawType}_${surface[0]}_${toothNumber[1]}.svg`; // "mandibular_b_1.svg"
+  const svgFileName = `${jawType}_${surface[0]}_${toothNumber[1]}.svg`;
+  const imageWidth = TOOTH_SVG_FILE_WIDTHS[svgFileName];
 
   return (
     <div
@@ -79,8 +86,8 @@ const ToothSVGContainer = ({
       ) : (
         ""
       )}
-      <img
-        src={imgURL}
+      <Image
+        src={`/assets/${jawType}_${surface[0]}_${toothNumber[1]}.svg`}
         alt="tooth SVG"
         className={`${
           isLeft(toothNumber) ? "flip_horizontal" : ""
@@ -89,6 +96,9 @@ const ToothSVGContainer = ({
           filter: teethStatus[toothNumber].exists ? "none" : "brightness(0)",
         }}
         onClick={handleImageClick}
+        height={120}
+        width={imageWidth}
+        layout="intrinsic"
       />
     </div>
   );
