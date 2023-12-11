@@ -13,6 +13,9 @@
   #menu {
     display: none !important;
   }
+  .radio-button-container {
+    display: none !important;
+  }
 }
 
 * {
@@ -260,6 +263,10 @@ h1 {
   width: 100%;
   margin-top: 10px;
   text-align: center;
+
+  p {
+    font-size: 14px;
+  }
 }
 
 /* Radio Button */
