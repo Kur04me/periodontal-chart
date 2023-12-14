@@ -4,6 +4,7 @@ import examFlow from "../exam_flow";
 import { TeethStatus, SurfacesWithoutOcclusal, Position, Mode } from "./types";
 import { KEY_BIND } from "./constance";
 import RadioButton from "./RadioButton";
+import { sampleData } from "./sampleData";
 
 // TODO: BOP機能
 // TODO: リファクタリング
@@ -18,6 +19,7 @@ import RadioButton from "./RadioButton";
  */
 const initTeethStatus = (): TeethStatus => {
   const teethStatus: TeethStatus = {};
+  if (process.env.NODE_ENV === "development") return sampleData; // 開発環境ではサンプルデータを返す
   const teeth = ["1", "2", "3", "4", "5", "6", "7", "8"];
   for (let i = 1; i < 5; i++) {
     teeth.forEach((tooth) => {

@@ -37,7 +37,10 @@ const ToothSVGContainer = ({
   };
 
   const svgFileName = `${jawType}_${surface[0]}_${toothNumber[1]}.svg`;
-  const svgFileURL = `/periodontal-chart/assets/${svgFileName}`;
+  const svgFileURL =
+    process.env.NODE_ENV === "development"
+      ? `/assets/${svgFileName}`
+      : `/periodontal-chart/assets/${svgFileName}`;
   const imageWidth = TOOTH_SVG_FILE_WIDTHS[svgFileName];
   const imageHeight = surface !== "occlusal" ? 120 : 45;
 
