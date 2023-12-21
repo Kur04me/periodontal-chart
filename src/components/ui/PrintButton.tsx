@@ -5,10 +5,17 @@ const PrintButton = () => {
   const handlePrint = () => {
     window.print();
   };
+
+  const svgFileName = "printer_icon.svg";
+  const svgFileURL =
+    process.env.NODE_ENV === "development"
+      ? `/assets/${svgFileName}`
+      : `/periodontal-chart/assets/${svgFileName}`;
+
   return (
     <>
       <Image
-        src="/periodontal-chart/assets/printer_icon.svg"
+        src={svgFileURL}
         alt="print-button-icon"
         height={32}
         width={32}

@@ -15,6 +15,7 @@ import {
 import { TeethStatus } from "./types";
 import Chart from "./Chart";
 import ToothSVGContainer from "./ToothSVGContainer";
+import PODInputWrapper from "./PODInputWrapper";
 
 type TeethContainerProps = {
   which: `${JawType}-${Surface}`;
@@ -48,14 +49,11 @@ const TeethContainer = ({
     if (!labels) return null;
     return (
       <>
-        {labels.map(
-          (label, index) =>
-            label && (
-              <p key={index} className={labelClasses[index]}>
-                {label}
-              </p>
-            )
-        )}
+        {labels.map((label, index) => (
+          <p key={index} className={labelClasses[index]}>
+            {label}
+          </p>
+        ))}
       </>
     );
   };
@@ -142,11 +140,14 @@ const TeethContainer = ({
             : "",
       }}
     >
+      {/* グラフの表示 */}
       {surface !== "occlusal" ? (
         <Chart teethStatus={teethStatus} jawType={jawType} surface={surface} />
       ) : null}
 
+      {/* ラベルの表示 */}
       {renderLabels(labels)}
+
       {TOOTH_NUMBERS[jawType].map((toothNumber) => (
         <React.Fragment key={`${which}_${toothNumber}`}>
           <ToothSVGContainer
@@ -155,6 +156,11 @@ const TeethContainer = ({
             surface={surface}
             teethStatus={teethStatus}
             setTeethStatus={setTeethStatus}
+          />
+          <PODInputWrapper
+            toothNumber={toothNumber}
+            surface={surface as SurfacesWithoutOcclusal}
+            teethStatus={teethStatus}
           />
           {labels && labels[0] !== undefined ? (
             <div

@@ -7,10 +7,9 @@ import Head from "next/head";
 const Home = () => {
   return (
     <>
-    <Head>
-      <title>Periodontal Chart</title>
-      <meta name="description" content="歯周組織検査表を作れます" />
-    </Head>
+      <Head>
+        <title>Periodontal Chart</title>
+      </Head>
       <div id="App">
         <Menu />
         <div id="main-container">
