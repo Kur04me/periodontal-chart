@@ -13,7 +13,7 @@ export default function Document() {
           name="keywords"
           content="歯周病, 歯周組織検査, 無料, オンラインツール, 歯周病管理"
         />
-        <link rel="icon" type="image/ico" href="/src/app/icon.ico" />
+        <link rel="icon" href="/src/app/favicon.ico" sizes="any" />
       </Head>
       <body>
         <Main />
